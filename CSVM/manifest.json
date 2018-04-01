@@ -1,0 +1,13 @@
+{
+  "Name": "Cassandra's Stardew Valley Mod",
+  "Author": "Ross Alexandra",
+  "Version": {
+    "MajorVersion": 0,
+    "MinorVersion": 1,
+    "PatchVersion": 0,
+    "Build": null
+  },
+  "Description": "A mod promised for one",
+  "UniqueID": "CSVM",
+  "EntryDll": "CSVM.dll"
+}
