@@ -144,19 +144,31 @@ namespace YourProjectName
 			}
 		}
 
+		/// <summary>
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void InjectNewLocations(object sender, EventArgs e)
 		{
 			//Load location assets.
 			Map TestRoom = this.helper.Content.Load<Map>("Res/RossRoom.tbin", ContentSource.ModFolder);
+			Map City = this.helper.Content.Load<Map>("Res/Town.tbin", ContentSource.ModFolder);
+			string testRoomAssetKey = this.Helper.Content.GetActualAssetKey("Res/RossRoom.tbin", ContentSource.ModFolder);
+			string cityAssetKey = this.Helper.Content.GetActualAssetKey("Res/Town.tbin", ContentSource.ModFolder);
 
 			//Create locations based off Maps declared.
-			GameLocation TestArea = new GameLocation(TestRoom, "TestRoom") { IsOutdoors = false, IsFarm = false };
+			GameLocation TestArea = new GameLocation(testRoomAssetKey, "TestRoom") { IsOutdoors = false, IsFarm = false };
 
 			//Load locations into game.
 			Game1.locations.Add(TestArea);
 
+			//Edit current locations in the game.
+			Game1.getLocationFromName("Town").map = City;
+			Game1.getLocationFromName("Town").updateMap();
+
 			//Add Wap points to game
-			Game1.getLocationFromName("Town").warps.Add(new Warp(18, 41, "TestRoom", 8, 11, false));
+			Game1.getLocationFromName("Town").warps.Add(new Warp(27, 48, "TestRoom", 8, 11, false));
+			Game1.getLocationFromName("Town").warps.Add(new Warp(28, 48, "TestRoom", 8, 11, false));
 		}
-    }
+	}
 }
