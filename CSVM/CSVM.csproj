@@ -48,6 +48,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\RossRoom.tbin">
+      <Link>Res\RossRoom.tbin</Link>
+    </None>
     <None Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\springobjects.yaml">
       <Link>Res\springobjects.yaml</Link>
     </None>
@@ -63,7 +66,6 @@
     <None Include="Resources\springobjects.yaml" />
     <None Include="Resources\Town.tbin" />
     <None Include="Resources\townCave.tbin" />
-    <None Include="Res\RossRoom.tbin" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\analyzers\dotnet\cs\StardewModdingAPI.ModBuildConfig.Analyzer.dll" />
@@ -123,6 +125,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\build\Pathoschild.Stardew.ModBuildConfig.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\build\Pathoschild.Stardew.ModBuildConfig.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

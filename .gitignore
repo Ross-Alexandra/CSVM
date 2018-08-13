@@ -244,3 +244,6 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /CSVM/CSVM/
+
+# Linked files
+*.lnk
