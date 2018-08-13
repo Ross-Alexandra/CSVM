@@ -121,10 +121,10 @@ namespace YourProjectName
 			InputEvents.ButtonPressed += this.InputEvents_ButtonPressed;
 
 			//Load in new assest.
-			helper.Content.AssetEditors.Add(new FishInjector());
-			helper.Content.AssetEditors.Add(new ItemInjector());
-			helper.Content.AssetEditors.Add(new LocationEditor(this.Monitor));
 			helper.Content.AssetEditors.Add(new TextureInjector(helper));
+			helper.Content.AssetEditors.Add(new LocationEditor(this.Monitor));
+			helper.Content.AssetEditors.Add(new ItemInjector());
+			helper.Content.AssetEditors.Add(new FishInjector());
 
 			//Add locations into game.
 			SaveEvents.AfterLoad += this.InjectNewLocations;
@@ -151,24 +151,31 @@ namespace YourProjectName
 		private void InjectNewLocations(object sender, EventArgs e)
 		{
 			//Load location assets.
-			Map TestRoom = this.helper.Content.Load<Map>("Res/RossRoom.tbin", ContentSource.ModFolder);
-			Map City = this.helper.Content.Load<Map>("Res/Town.tbin", ContentSource.ModFolder);
+			Map testRoomMap = this.helper.Content.Load<Map>("Res/RossRoom.tbin", ContentSource.ModFolder);
+			Map cityMap = this.helper.Content.Load<Map>("Res/Town.tbin", ContentSource.ModFolder);
+			Map cityCaveMap = this.helper.Content.Load<Map>("Res/townCave.tbin", ContentSource.ModFolder);
+
+			//Get asset keys for created areas.
 			string testRoomAssetKey = this.Helper.Content.GetActualAssetKey("Res/RossRoom.tbin", ContentSource.ModFolder);
 			string cityAssetKey = this.Helper.Content.GetActualAssetKey("Res/Town.tbin", ContentSource.ModFolder);
+			string cityCaveAssetKey = this.Helper.Content.GetActualAssetKey("Res/townCave.tbin", ContentSource.ModFolder);
 
 			//Create locations based off Maps declared.
 			GameLocation TestArea = new GameLocation(testRoomAssetKey, "TestRoom") { IsOutdoors = false, IsFarm = false };
+			GameLocation cityCave = new GameLocation(cityCaveAssetKey, "Town Cave") { IsOutdoors = false, IsFarm = false };
 
 			//Load locations into game.
 			Game1.locations.Add(TestArea);
+			Game1.locations.Add(cityCave);
 
 			//Edit current locations in the game.
-			Game1.getLocationFromName("Town").map = City;
+			Game1.getLocationFromName("Town").map = cityMap;
 			Game1.getLocationFromName("Town").updateMap();
 
 			//Add Wap points to game
-			Game1.getLocationFromName("Town").warps.Add(new Warp(27, 48, "TestRoom", 8, 11, false));
-			Game1.getLocationFromName("Town").warps.Add(new Warp(28, 48, "TestRoom", 8, 11, false));
+			Game1.getLocationFromName("Town").warps.Add(new Warp(27, 46, "Town Cave", 4, 9, false));
+			Game1.getLocationFromName("Town").warps.Add(new Warp(28, 46, "Town Cave", 4, 9, false));
+			cityCave.warps.Add(new Warp(4, 10, "Town", 27, 47, false));
 		}
 	}
 }

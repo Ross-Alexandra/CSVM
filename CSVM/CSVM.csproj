@@ -48,30 +48,72 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\springobjects.yaml">
+      <Link>Res\springobjects.yaml</Link>
+    </None>
+    <None Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Town.tbin">
+      <Link>Res\Town.tbin</Link>
+    </None>
+    <None Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\townCave.tbin">
+      <Link>Res\townCave.tbin</Link>
+    </None>
     <None Include="manifest.json" />
     <None Include="packages.config" />
-    <None Include="Res\RossRoom.tbin">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Res\Town.tbin" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Res\DesertTiles.png" />
-    <Content Include="Res\fall_outdoorsTileSheet.png" />
-    <Content Include="Res\Item798.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Res\Item797.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Res\paths.png" />
-    <Content Include="Res\spring_outdoorsTileSheet.png" />
-    <Content Include="Res\spring_town.png" />
-    <Content Include="Res\summer_outdoorsTileSheet.png" />
-    <Content Include="Res\winter_outdoorsTileSheet.png" />
+    <None Include="Resources\RossRoom.tbin" />
+    <None Include="Resources\springobjects.yaml" />
+    <None Include="Resources\Town.tbin" />
+    <None Include="Resources\townCave.tbin" />
+    <None Include="Res\RossRoom.tbin" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\analyzers\dotnet\cs\StardewModdingAPI.ModBuildConfig.Analyzer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\DesertTiles.png">
+      <Link>Res\DesertTiles.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\fall_outdoorsTileSheet.png">
+      <Link>Res\fall_outdoorsTileSheet.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Item797.png">
+      <Link>Res\Item797.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Item798.png">
+      <Link>Res\Item798.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\objs.png">
+      <Link>Res\objs.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\paths.png">
+      <Link>Res\paths.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\springobjects.png">
+      <Link>Res\springobjects.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\spring_outdoorsTileSheet.png">
+      <Link>Res\spring_outdoorsTileSheet.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\spring_town.png">
+      <Link>Res\spring_town.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\summer_outdoorsTileSheet.png">
+      <Link>Res\summer_outdoorsTileSheet.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\winter_outdoorsTileSheet.png">
+      <Link>Res\winter_outdoorsTileSheet.png</Link>
+    </Content>
+    <Content Include="Resources\DesertTiles.png" />
+    <Content Include="Resources\fall_outdoorsTileSheet.png" />
+    <Content Include="Resources\Item797.png" />
+    <Content Include="Resources\Item798.png" />
+    <Content Include="Resources\mine.png" />
+    <Content Include="Resources\objs.png" />
+    <Content Include="Resources\paths.png" />
+    <Content Include="Resources\springobjects.png" />
+    <Content Include="Resources\spring_outdoorsTileSheet.png" />
+    <Content Include="Resources\spring_town.png" />
+    <Content Include="Resources\summer_outdoorsTileSheet.png" />
+    <Content Include="Resources\winter_outdoorsTileSheet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\build\Pathoschild.Stardew.ModBuildConfig.targets" Condition="Exists('..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\build\Pathoschild.Stardew.ModBuildConfig.targets')" />
