@@ -32,6 +32,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="System" />
@@ -44,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InputEvents.cs" />
+    <Compile Include="LocationEditor.cs" />
+    <Compile Include="SaveEvents.cs" />
+    <Compile Include="TextureInjector.cs" />
+    <Compile Include="FishInjector.cs" />
+    <Compile Include="ItemInjector.cs" />
     <Compile Include="ModEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,17 +101,14 @@
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\fall_outdoorsTileSheet.png">
       <Link>Res\fall_outdoorsTileSheet.png</Link>
     </Content>
-    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Item797.png">
-      <Link>Res\Item797.png</Link>
-    </Content>
-    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Item798.png">
-      <Link>Res\Item798.png</Link>
-    </Content>
-    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\objs.png">
-      <Link>Res\objs.png</Link>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Gear.png">
+      <Link>Res\Gear.png</Link>
     </Content>
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\paths.png">
       <Link>Res\paths.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Rod.png">
+      <Link>Res\Rod.png</Link>
     </Content>
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\springobjects.png">
       <Link>Res\springobjects.png</Link>
@@ -104,13 +125,13 @@
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\winter_outdoorsTileSheet.png">
       <Link>Res\winter_outdoorsTileSheet.png</Link>
     </Content>
+    <Content Include="Resources\csvmTileSheet.bmp" />
     <Content Include="Resources\DesertTiles.png" />
     <Content Include="Resources\fall_outdoorsTileSheet.png" />
-    <Content Include="Resources\Item797.png" />
-    <Content Include="Resources\Item798.png" />
+    <Content Include="Resources\Gear.png" />
     <Content Include="Resources\mine.png" />
-    <Content Include="Resources\objs.png" />
     <Content Include="Resources\paths.png" />
+    <Content Include="Resources\Rod.png" />
     <Content Include="Resources\springobjects.png" />
     <Content Include="Resources\spring_outdoorsTileSheet.png" />
     <Content Include="Resources\spring_town.png" />
