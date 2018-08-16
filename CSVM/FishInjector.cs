@@ -12,17 +12,26 @@ namespace CSVM
 {
 	public class FishInjector : IAssetEditor
 	{
+		// A dictionary created in InjectTextures which holds the index for each item being injected.
+		private readonly Dictionary<string, int> itemPairs;
+
+		// Initialized the dictionary with the actual dictionary used.
+		public FishInjector(Dictionary<string, int> itemPairs)
+		{
+			this.itemPairs = itemPairs;
+		}
+
+
 		public bool CanEdit<T>(IAssetInfo asset)
 		{
 			return asset.AssetNameEquals(@"Data\Fish");
 		}
 
-		/// <summary>Load a matched asset.</summary>
-		/// <param name="asset">Basic metadata about the asset being loaded.</param>
+		//Injects the fish into the game's data files.
 		public void Edit<T>(IAssetData asset)
 		{
-			asset.AsDictionary<int, string>().Set(798, "Gear/5/floater/-1/-1/600 2600/spring summer fall winter/both/-1/1/.7/.1/0");
-			asset.AsDictionary<int, string>().Set(799, "Rod/5/floater/-1/-1/600 2600/spring summer fall winter/both/-1/1/.7/.1/0");
+			asset.AsDictionary<int, string>().Set(this.itemPairs["gear"], "Mysterious Gear/5/floater/-1/-1/600 2600/spring summer fall winter/both/-1/0/.7/.1/0");
+			asset.AsDictionary<int, string>().Set(this.itemPairs["rod"], "Mysterious Rod/5/floater/-1/-1/600 2600/spring summer fall winter/both/-1/0/.7/.1/0");
 		}
 	}
 }

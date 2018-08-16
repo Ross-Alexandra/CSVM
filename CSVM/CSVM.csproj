@@ -95,6 +95,9 @@
     <Analyzer Include="..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\analyzers\dotnet\cs\StardewModdingAPI.ModBuildConfig.Analyzer.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\csvmTileSheet.bmp">
+      <Link>Res\csvmTileSheet.bmp</Link>
+    </Content>
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\DesertTiles.png">
       <Link>Res\DesertTiles.png</Link>
     </Content>
@@ -103,6 +106,9 @@
     </Content>
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\Gear.png">
       <Link>Res\Gear.png</Link>
+    </Content>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\mine.png">
+      <Link>Res\mine.png</Link>
     </Content>
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\paths.png">
       <Link>Res\paths.png</Link>

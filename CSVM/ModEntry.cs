@@ -14,6 +14,8 @@ namespace CSVM
 	public class ModEntry : Mod
     {
 
+		Dictionary<string, int> itemIndices;
+
 		public override void Entry(IModHelper helper)
 		{
 
@@ -24,10 +26,12 @@ namespace CSVM
 			InputEvents.ButtonPressed += InputEventsObject.ButtonPressed;
 
 			//Inject new assest into game.
-			helper.Content.AssetEditors.Add(new FishInjector());
-			helper.Content.AssetEditors.Add(new TextureInjector(helper));
-			helper.Content.AssetEditors.Add(new LocationEditor(this.Monitor));
-			helper.Content.AssetEditors.Add(new ItemInjector());
+			itemIndices = new Dictionary<string, int>();
+
+			helper.Content.AssetEditors.Add(new TextureInjector(helper, ref itemIndices));
+			helper.Content.AssetEditors.Add(new FishInjector(itemIndices));
+			helper.Content.AssetEditors.Add(new LocationEditor(this.Monitor, itemIndices));
+			helper.Content.AssetEditors.Add(new ItemInjector(itemIndices));
 
 			//Setup save events object.
 			csvmSaveEvents SaveEventsObject = new csvmSaveEvents(this);
