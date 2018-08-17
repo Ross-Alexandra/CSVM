@@ -30,7 +30,6 @@ namespace CSVM
 
 			//Add save events from the object.
 			StardewModdingAPI.Events.SaveEvents.AfterLoad += SaveEventsObject.LocationInjector;
-			//ContentEvents.AfterLocaleChanged += SaveEventsObject.LocationInjector;
 
 			//Inject new assest into game.
 			itemIndices = new Dictionary<string, int>();

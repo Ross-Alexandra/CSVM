@@ -31,7 +31,6 @@ namespace CSVM
 		public void Edit<T>(IAssetData asset)
 		{
 			asset.AsDictionary<int, string>().Set(this.itemPairs["gear"], "Mysterious Gear/5/floater/-1/-1/600 2600/spring summer fall winter/both/-1/0/.7/.1/0");
-			asset.AsDictionary<int, string>().Set(this.itemPairs["rod"], "Mysterious Rod/5/floater/-1/-1/600 2600/spring summer fall winter/both/-1/0/.7/.1/0");
 		}
 	}
 }
