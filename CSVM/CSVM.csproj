@@ -87,7 +87,6 @@
     <None Include="manifest.json" />
     <None Include="packages.config" />
     <None Include="Resources\RossRoom.tbin" />
-    <None Include="Resources\springobjects.yaml" />
     <None Include="Resources\Town.tbin" />
     <None Include="Resources\townCave.tbin" />
   </ItemGroup>
@@ -95,8 +94,8 @@
     <Analyzer Include="..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0\analyzers\dotnet\cs\StardewModdingAPI.ModBuildConfig.Analyzer.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\csvmTileSheet.bmp">
-      <Link>Res\csvmTileSheet.bmp</Link>
+    <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\csvmTileSheet.png">
+      <Link>Res\csvmTileSheet.png</Link>
     </Content>
     <Content Include="D:\SteamLibrary\steamapps\common\Stardew Valley\Mods\CSVM\Res\DesertTiles.png">
       <Link>Res\DesertTiles.png</Link>
@@ -132,12 +131,11 @@
       <Link>Res\winter_outdoorsTileSheet.png</Link>
     </Content>
     <Content Include="Resources\csvmTileSheet.bmp" />
+    <Content Include="Resources\csvmTileSheet.png" />
     <Content Include="Resources\DesertTiles.png" />
     <Content Include="Resources\fall_outdoorsTileSheet.png" />
-    <Content Include="Resources\Gear.png" />
     <Content Include="Resources\mine.png" />
     <Content Include="Resources\paths.png" />
-    <Content Include="Resources\Rod.png" />
     <Content Include="Resources\springobjects.png" />
     <Content Include="Resources\spring_outdoorsTileSheet.png" />
     <Content Include="Resources\spring_town.png" />

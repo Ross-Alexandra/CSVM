@@ -22,6 +22,7 @@ namespace CSVM
 
 		public void LocationInjector(object sender, EventArgs e)
 		{
+
 			//Load location assets.
 			Map testRoomMap = this.coreMod.Helper.Content.Load<Map>("Res/RossRoom.tbin", ContentSource.ModFolder);
 			Map cityMap = this.coreMod.Helper.Content.Load<Map>("Res/Town.tbin", ContentSource.ModFolder);
@@ -34,7 +35,7 @@ namespace CSVM
 
 			//Create locations based off Maps declared.
 			GameLocation TestArea = new GameLocation(testRoomAssetKey, "TestRoom") { IsOutdoors = false, IsFarm = false };
-			GameLocation cityCave = new GameLocation(cityCaveAssetKey, "Town Cave") { IsOutdoors = false, IsFarm = false };
+			GameLocation cityCave = new GameLocation(cityCaveAssetKey, "TownCave") { IsOutdoors = false, IsFarm = false };
 
 			//Load locations into game.
 			Game1.locations.Add(TestArea);
@@ -45,7 +46,6 @@ namespace CSVM
 			Game1.getLocationFromName("Town").updateMap();
 
 			//Add Wap points to game
-			// TODO: Add these warps to the tbin files, rather than do them programatically.
 			Game1.getLocationFromName("Town").warps.Add(new Warp(27, 46, "Town Cave", 4, 9, false));
 			Game1.getLocationFromName("Town").warps.Add(new Warp(28, 46, "Town Cave", 4, 9, false));
 			cityCave.warps.Add(new Warp(4, 10, "Town", 27, 47, false));

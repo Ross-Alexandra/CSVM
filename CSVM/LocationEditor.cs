@@ -21,32 +21,27 @@ namespace CSVM
 			this.monitor = monitor;
 			this.itemPairs = itemPairs;
 		}
-		/// <summary>Get whether this instance can edit the given asset.</summary>
-		/// <param name="asset">Basic metadata about the asset being loaded.</param>
+
 		public bool CanEdit<T>(IAssetInfo asset)
 		{
 			return asset.AssetNameEquals(@"Data\Locations");
 		}
 
-		/// <summary>Edit a matched asset.</summary>
-		/// <param name="asset">A helper which encapsulates metadata about an asset and enables changes to it.</param>
 		public void Edit<T>(IAssetData asset)
 		{
-			asset
-				.AsDictionary<string, string>()
-				.Set((id, data) =>
-				{
-					string[] fields = data.Split('/');
-					fields[4] = fields[4] != "-1" ? fields[4] + $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1" : $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1";
-					fields[5] = fields[5] != "-1" ? fields[4] + $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1" : $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1";
-					fields[6] = fields[6] != "-1" ? fields[4] + $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1" : $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1";
-					fields[7] = fields[7] != "-1" ? fields[4] + $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1" : $"{this.itemPairs["gear"]} -1 {this.itemPairs["rod"]} -1";
 
-					return string.Join("/", fields);
-				});
+			//Add data for new locations.
+			string[] baseLocationParams = { "-1" , "-1" , "-1", "-1", "-1", "-1", "-1", "-1", "-1"};
 
-			// Get data for each location. - TODO
-			//string caveTownData = asset.AsDictionary<string, string>()[5];
+			// Add the fish to the town cave.
+			string[] townCaveParams = (string[]) baseLocationParams.Clone();
+			townCaveParams[4] = $"{this.itemPairs["gear"]} -1";
+			townCaveParams[5] = $"{this.itemPairs["gear"]} -1";
+			townCaveParams[6] = $"{this.itemPairs["gear"]} -1";
+			townCaveParams[7] = $"{this.itemPairs["gear"]} -1";
+
+			// Reset the assets.
+			asset.AsDictionary<string, string>().Set("TownCave", String.Join("/", townCaveParams));
 		}
 	}
 }

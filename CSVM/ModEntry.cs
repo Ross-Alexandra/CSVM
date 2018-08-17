@@ -14,7 +14,7 @@ namespace CSVM
 	public class ModEntry : Mod
     {
 
-		Dictionary<string, int> itemIndices;
+		public Dictionary<string, int> itemIndices;
 
 		public override void Entry(IModHelper helper)
 		{
@@ -25,6 +25,13 @@ namespace CSVM
 			//Add input events from the object.
 			InputEvents.ButtonPressed += InputEventsObject.ButtonPressed;
 
+			//Setup save events object.
+			csvmSaveEvents SaveEventsObject = new csvmSaveEvents(this);
+
+			//Add save events from the object.
+			StardewModdingAPI.Events.SaveEvents.AfterLoad += SaveEventsObject.LocationInjector;
+			//ContentEvents.AfterLocaleChanged += SaveEventsObject.LocationInjector;
+
 			//Inject new assest into game.
 			itemIndices = new Dictionary<string, int>();
 
@@ -32,12 +39,6 @@ namespace CSVM
 			helper.Content.AssetEditors.Add(new FishInjector(itemIndices));
 			helper.Content.AssetEditors.Add(new LocationEditor(this.Monitor, itemIndices));
 			helper.Content.AssetEditors.Add(new ItemInjector(itemIndices));
-
-			//Setup save events object.
-			csvmSaveEvents SaveEventsObject = new csvmSaveEvents(this);
-
-			//Add save events from the object.
-			StardewModdingAPI.Events.SaveEvents.AfterLoad += SaveEventsObject.LocationInjector;
 		}
 	}
 }
