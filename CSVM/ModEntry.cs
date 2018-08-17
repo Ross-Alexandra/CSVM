@@ -38,6 +38,7 @@ namespace CSVM
 			helper.Content.AssetEditors.Add(new FishInjector(itemIndices));
 			helper.Content.AssetEditors.Add(new LocationEditor(this.Monitor, itemIndices));
 			helper.Content.AssetEditors.Add(new ItemInjector(itemIndices));
+			helper.Content.AssetEditors.Add(new LootTableEditor(this.Monitor, itemIndices));
 		}
 	}
 }
